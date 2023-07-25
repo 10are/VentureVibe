@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from organization.api import urls as api_urls
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),  
-    path('accounts/', include('allauth.urls')),  
+    path('accounts/', include('allauth.urls')),
     path('api/', include(api_urls)),
-   
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),  # rest auth urls
+    path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls'))  # registration urls
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

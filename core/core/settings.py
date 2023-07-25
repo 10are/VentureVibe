@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -28,7 +27,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,16 +35,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  
+
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
 
     'allauth',
     'allauth.account',
-
-
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
     'organization',
+
+    'corsheaders',
 ]
 
+SITE_ID = 1
+
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -92,14 +100,24 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-SITE_ID = 1  # Django Allauth için gerekli site ayarı
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ],
+}
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
 
 # Django Allauth Ayarları
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -136,8 +154,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+import os
 
-STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_URL = 'static/'
+
+# settings.py
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -10,7 +10,7 @@ class Organization(models.Model):
     )
 
     name = models.CharField(max_length=200)
-    logo = models.ImageField(upload_to='logos/', blank=True, null=True)
+    logo = models.ImageField(upload_to='media/', blank=True, null=True)
     business_type = models.CharField(max_length=10, choices=BUSINESS_TYPES)
     country = CountryField()
     website = models.URLField(max_length=200, blank=True, null=True)
