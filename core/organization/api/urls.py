@@ -9,6 +9,7 @@ router = routers.DefaultRouter()
 
 
 router.register(r'organization', OrganizationViewSet)
+router.register(r'organizationrating', OrganizationRatingViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
