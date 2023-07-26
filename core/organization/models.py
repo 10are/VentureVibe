@@ -11,10 +11,10 @@ class Organization(models.Model):
 
     name = models.CharField(max_length=200)
     logo = models.ImageField(upload_to='media/', blank=True, null=True)
-    business_type = models.CharField(max_length=10, choices=BUSINESS_TYPES)
-    country = CountryField()
+    business_type = models.CharField(max_length=10, choices=BUSINESS_TYPES, blank=True, null=True)
+    country = CountryField(blank=True, null=True)
     website = models.URLField(max_length=200, blank=True, null=True)
-    employee_count = models.PositiveIntegerField()
+    employee_count = models.PositiveIntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.name
