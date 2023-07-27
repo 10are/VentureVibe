@@ -90,17 +90,26 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 import psycopg2
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'dbventure',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'dbventure.cwbnqzfxujbi.eu-north-1.rds.amazonaws.com',
+#         'PORT': '5432',
+
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbventure',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'dbventure.cwbnqzfxujbi.eu-north-1.rds.amazonaws.com',
-        'PORT': '5432',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 AUTHENTICATION_BACKENDS = [
