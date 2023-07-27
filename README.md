@@ -11,27 +11,27 @@ VentureVibe is a Django-based web application that allows users to rate and revi
 
 To run the project locally, follow these steps:
 
-1. Clone the repository:
+- Clone the repository:
 
 git clone <https://github.com/10are/VentureVibe.git>
 
 cd venturevibe
 
-2. Create and activate a virtual environment:
+- Create and activate a virtual environment:
 
 python3 -m venv env
 
 source env/bin/activate # On Windows: env\Scripts\activate
 
-3. Install project dependencies:
+- Install project dependencies:
 
 pip install -r requirements.txt
 
-4. Apply migrations:
+- Apply migrations:
 
 python manage.py migrate
 
-5. Run the development server:
+- Run the development server:
 
 python manage.py runserver
 
@@ -40,17 +40,17 @@ python manage.py runserver
 
 To run the project using Docker, make sure you have Docker installed on your system.
 
-1. Clone the repository:
+- Clone the repository:
 
 git clone <https://github.com/10are/VentureVibe.git>
 
 cd venturevibe
 
-2. Build the Docker image:
+- Build the Docker image:
 
 docker compose build
 
-3. Run the Docker container:
+- Run the Docker container:
 
 docker compose up
 
