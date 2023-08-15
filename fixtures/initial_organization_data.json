@@ -1,0 +1,25 @@
+[
+    {
+      "model": "organization.organization",
+      "pk": 5,
+      "fields": {
+        "name": "Örnek Organizasyon 1",
+        "business_type": "large",
+        "country": "TR",
+        "website": "http://ornekorganizasyon1.com",
+        "employee_count": 500
+      }
+    },
+    {
+      "model": "organization.organization",
+      "pk": 6,
+      "fields": {
+        "name": "Örnek Organizasyon 2",
+        "business_type": "sme",
+        "country": "US",
+        "website": "http://ornekorganizasyon2.com",
+        "employee_count": 50
+      }
+    }
+  ]
+  

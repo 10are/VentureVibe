@@ -14,14 +14,3 @@ class OrganizationViewSet(viewsets.ModelViewSet):
     serializer_class = OrganizationSerializer
     pagination_class = OrganizationPagination
 
-class OrganizationRatingViewSet(viewsets.ModelViewSet):
-    queryset = OrganizationRating.objects.all()
-    serializer_class = OrganizationRatingSerializer
-
-    def perform_create(self, serializer):
-        instance = serializer.save()
-        like_count = OrganizationRating.objects.filter(organization=instance.organization, rating='like').count()
-        dislike_count = OrganizationRating.objects.filter(organization=instance.organization, rating='dislike').count()
-        instance.organization.like_count = like_count
-        instance.organization.dislike_count = dislike_count
-        instance.organization.save()
