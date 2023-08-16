@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'organization',
     'django_countries',
+    'drf_yasg',
 
     'corsheaders',
 ]
