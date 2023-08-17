@@ -21,10 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h7q!ny)#c54^*b@1dpr3)y^*5^)i4+iuw8abtb6^#0)_7!#!3c'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
 
 
 
@@ -112,6 +108,8 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = ['13.48.249.185']
+DEBUG = False
 
 
 AUTHENTICATION_BACKENDS = [
@@ -128,6 +126,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://13.48.249.185",
 ]
 
 # Django Allauth Ayarları
