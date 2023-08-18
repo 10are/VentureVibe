@@ -108,7 +108,7 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ['13.48.249.185']
+ALLOWED_HOSTS = ['16.171.17.117']
 DEBUG = False
 
 
