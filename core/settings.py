@@ -178,6 +178,12 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
+# settings.py
+# settings.py
+
+STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFileStorage'
 
 
 # Default primary key field type
