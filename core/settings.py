@@ -21,10 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h7q!ny)#c54^*b@1dpr3)y^*5^)i4+iuw8abtb6^#0)_7!#!3c'
 
+JAZZMIN_SETTINGS = {
+    "site_title": "VentureVibe",
+    "site_header": "VentureVibe",
+    "nav_title": "VentureVibe",
+    "show_sidebar": True,
+    "related_modal_active": True,
+    "changeform_format": "horizontal_tabs",
+}
 
 
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
