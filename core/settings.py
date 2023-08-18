@@ -108,8 +108,8 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ['16.171.17.117']
-DEBUG = False
+ALLOWED_HOSTS = ['*']
+DEBUG = True
 
 
 AUTHENTICATION_BACKENDS = [
@@ -174,8 +174,8 @@ USE_TZ = True
 import os
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # settings.py
