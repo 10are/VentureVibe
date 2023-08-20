@@ -3,7 +3,7 @@
 VentureVibe is a Django-based web application that allows users to rate and review organizations based on various criteria. The platform aims to provide a space for users to share their experiences with organizations and help others make informed decisions.
 
 # LIVE 
-<http://16.170.203.61:8000/admin/>
+<http://16.171.17.117/admin/>
 
 ## Installation
 
